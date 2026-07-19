@@ -8,7 +8,8 @@
 - **build.gradle.kts release 强制正式签名**：缺 `key.properties` 时 release 构建直接失败（已实测），永不回退 debug 签名。
 - **源码公开仓**：https://github.com/coni555/FreeGrid-Android （main，首提交 `e4a6539`）。
 - **1.0.0 APK 已发布**：挂在 FreeGrid-Freedom Releases tag `android-v1.0.0`，文件 `FreeGrid-Android-1.0.0.apk`（51.9MB，零 INTERNET，apksigner 已验签为正式证书），SHA-256 `569a139f7ced1fa16eceb06adc8b7dfa88f2d489f0e0a711f889039e207d37f0`。
-- **发布后待办**：① 双仓库统一下载表交叉链接（FreeGrid-Freedom / FreeGrid-Web README 加安卓入口）；② 真实小屏/字体放大/TalkBack 完整无障碍验收；③ 用户侧：U 盘备份 keystore + 密码进密码管理器。
+- **交叉链接已完成（2026-07-19）**：Freedom / Web / Android 三仓 README 均含统一下载表与互链（Freedom 与 Web 的 main 已分叉于本地，是走 GitHub Contents API 直接改远端的，本地克隆 pull 前注意）；iOS/macOS 下载链接从 `releases/latest` 改为 `tag/v1.1`（因 latest 现指向安卓 release）。Android 仓补了面向用户的 README + LICENSE（MIT + Commons Clause，与主仓一致）。
+- **发布后待办**：① 真实小屏/字体放大/TalkBack 完整无障碍验收；② 用户侧：U 盘备份 keystore + 密码进密码管理器。
 
 > 以下为发布前的开发历史存档（截至 2026-07-14，iOS 1.2 功能对标第四轮 P1-P5 与 13 项最终验收已全部完成）。
 
