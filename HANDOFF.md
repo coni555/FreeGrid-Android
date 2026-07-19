@@ -1,6 +1,16 @@
 # FreeGrid Android · HANDOFF
 
-> 最后更新：2026-07-14。iOS 1.2 功能对标第四轮 P1-P5 与 13 项最终验收已全部完成。
+> 最后更新：2026-07-19。**1.0.0 已公开发布。**
+
+## 发布记录（2026-07-19）
+
+- **正式签名已落地**：keystore `~/keystores/freegrid-release.jks`（alias `freegrid`，证书 SHA-256 `18:21:51:51:...:4D:43`），密码在用户密码管理器；iCloud 已备份（`~/Library/Mobile Documents/com~apple~CloudDocs/FreeGrid-keystore备份/`），U 盘备份待用户完成。`android/key.properties` 引用它且被 gitignore。
+- **build.gradle.kts release 强制正式签名**：缺 `key.properties` 时 release 构建直接失败（已实测），永不回退 debug 签名。
+- **源码公开仓**：https://github.com/coni555/FreeGrid-Android （main，首提交 `e4a6539`）。
+- **1.0.0 APK 已发布**：挂在 FreeGrid-Freedom Releases tag `android-v1.0.0`，文件 `FreeGrid-Android-1.0.0.apk`（51.9MB，零 INTERNET，apksigner 已验签为正式证书），SHA-256 `569a139f7ced1fa16eceb06adc8b7dfa88f2d489f0e0a711f889039e207d37f0`。
+- **发布后待办**：① 双仓库统一下载表交叉链接（FreeGrid-Freedom / FreeGrid-Web README 加安卓入口）；② 真实小屏/字体放大/TalkBack 完整无障碍验收；③ 用户侧：U 盘备份 keystore + 密码进密码管理器。
+
+> 以下为发布前的开发历史存档（截至 2026-07-14，iOS 1.2 功能对标第四轮 P1-P5 与 13 项最终验收已全部完成）。
 
 ## 当前状态
 
