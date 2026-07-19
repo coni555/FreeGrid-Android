@@ -1,49 +1,46 @@
 # FreeGrid Android
 
-Flutter 真原生安卓版工程。目标不是把 iOS 的 SwiftUI 直接转换过来，而是复用 FreeGrid 已经验证过的产品规则、算法口径和 JSON 备份格式，在 Android 上重写一版原生体验。
+> **自由天数记账**——把每一笔收支翻译成「±N 天自由」。纯本地、零联网、无账号。
 
-## 当前状态
+FreeGrid 的 **Flutter 真原生安卓版**。不是 iOS SwiftUI 的机器翻译，而是复用 FreeGrid 已验证的产品规则、算法口径和 JSON 备份格式，在 Android 上重写的原生体验。
 
-- Flutter SDK: 3.44.5
-- Dart: 3.12.2
-- Android SDK: `/Users/coni/Library/Android/sdk`
-- JDK: Homebrew `openjdk@21`
-- 包名: `cn.conilab.freegrid`
-- 平台: Android only
+## 📥 下载
 
-已建立：
+**[⬇️ FreeGrid-Android-1.0.0.apk](https://github.com/coni555/FreeGrid-Freedom/releases/tag/android-v1.0.0)**（发布在主仓 FreeGrid-Freedom 的 Releases，附 SHA-256 校验和与安装说明）
 
-- 最小 Flutter App 壳
-- FreeGrid 核心模型
-- `FreedomMath` 纯 Dart 迁移
-- iOS/Web 兼容的 `BackupJSON` codec
-- 核心算法与备份格式测试
-- 项目接力与迁移文档
+## ✨ 与 iOS 版同源对标
 
-## 常用命令
+- **自由天数**：净值 ÷（日均消费 − 日均被动收入），首页一个大数字
+- **Freedom Grid**：自由天数点亮成格子，日/月/年三档
+- **模拟决策**：下单前预演这笔支出对自由天数的冲击
+- **资产双桶 / 被动收入 / 历史账本 / 财富自由自检**
+- **数据互通**：备份 JSON 与 [iOS / macOS 版](https://github.com/coni555/FreeGrid-Freedom)、[网页 / Windows 版](https://github.com/coni555/FreeGrid-Web) 完全互通，CSV 可导出
+
+## 🔒 隐私
+
+APK **不含 `android.permission.INTERNET`**——不是"承诺不联网"，是系统层面**没有联网能力**。数据只存在你的手机里，本仓库源码可自行验证与构建。
+
+## 🌍 其他平台
+
+| 平台 | 仓库 |
+|---|---|
+| 🍎 iOS / macOS（SwiftUI 原生，主仓） | [FreeGrid-Freedom](https://github.com/coni555/FreeGrid-Freedom) |
+| 🌐 网页 / 🪟 Windows（Svelte + Tauri） | [FreeGrid-Web](https://github.com/coni555/FreeGrid-Web) |
+| 🤖 Android（Flutter，本仓） | 就是这里 |
+
+## 🛠 开发
 
 ```bash
-cd /Users/coni/Desktop/FreeGrid-Android
 flutter doctor -v
 flutter analyze
 flutter test
 flutter build apk --debug
 ```
 
-如果新终端找不到 Java，先加：
+- Flutter 3.44 / Dart 3.12，包名 `cn.conilab.freegrid`
+- release 构建强制正式 keystore 签名（`android/key.properties`，不入库）；缺失时构建直接失败，绝不回退 debug 签名
+- 文档：[HANDOFF.md](HANDOFF.md)（进度）· [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)（架构）· [docs/DATA_CONTRACT.md](docs/DATA_CONTRACT.md)（跨端数据契约）· [docs/MIGRATION_CHECKLIST.md](docs/MIGRATION_CHECKLIST.md)（迁移验收清单）
 
-```bash
-export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$HOME/Library/Android/sdk/platform-tools:$PATH"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-```
+## 许可
 
-## 文档入口
-
-- [AGENTS.md](AGENTS.md): 项目协作规则
-- [HANDOFF.md](HANDOFF.md): 当前进度和下一步
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): 工程架构
-- [docs/DATA_CONTRACT.md](docs/DATA_CONTRACT.md): iOS/Web/Android 数据契约
-- [docs/ANDROID_ENV.md](docs/ANDROID_ENV.md): 本机安卓环境
-- [docs/MIGRATION_CHECKLIST.md](docs/MIGRATION_CHECKLIST.md): 从 iOS/Web 迁移到 Flutter 的验收清单
+**MIT License + [Commons Clause](https://commonsclause.com/)**——与主仓一致：源码公开，允许自由使用、修改、学习、非商业分发，但**不得出售本软件**。
